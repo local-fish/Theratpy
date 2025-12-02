@@ -151,7 +151,7 @@ monogatari.script ({
 		'Pacarmu tersenyum dengan rasa lega',
 		'play voice lady',
 		'“Terima kasih, aku rasa ini akan baik bagi kita”',
-		'jump Scene1',
+		'jump Scene2',
 	],
 	'No': [
 		'show character p angry at left',
@@ -167,7 +167,7 @@ monogatari.script ({
 		'end'
 	],
 	'Scene1': [
-		'show scene #000000 with fadeIn',
+		'show scene #e1a8aa with fadeIn',
 		'play voice system',
 		'Keesokan harinya, kalian berdua pergi ke klinik bersama',
 		'play sound door',
@@ -246,5 +246,26 @@ monogatari.script ({
 		'd “Saya akan memberikan beberapa pernyataan.”',
 		'play voice doctor',
 		'd “Silahkan nilai setiap pernyataan dari 1 (sangat tidak setuju) hingga 6 (sangat setuju) berdasarkan seberapa hal tersebut menggambarkanmu.”',
+		'jump Scene2',
 	],
+	'Scene2':[
+		'play voice system',
+		'Dr. Cheeser berbicara dengan tenang.',
+		'play voice doctor',
+		'd “Mari kita mulai dengan bagaimana Anda memandang hubungan Anda dan posisi hubungan itu dalam hidup Anda.”',
+		'play voice doctor',
+		'd “Kita bisa mulai dengan pertanyaan pertama.”',
+		{'Input':{
+			'Text':'Teman-teman tidak akan keberatan jika saya putus dengan pasangan saat ini',
+			'Type':'radio',
+			'Options':[
+				{label: '1', value: 1},
+				{label: '2', value: 2},
+				{label: '3', value: 3},
+				{label: '4', value: 4},
+				{label: '5', value: 5},
+				{label: '6', value: 6}
+			]
+		}},
+	]
 });
