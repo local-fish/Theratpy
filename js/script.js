@@ -86,7 +86,7 @@ monogatari.characters ({
 		},
 	},
 	'p': {
-		name: 'Partner',
+		name: 'Pacar',
 		color: '#b38fa4',
 		sprites: {
 			normal: 'Normal_Lady.png',
