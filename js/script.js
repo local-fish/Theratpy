@@ -9,14 +9,7 @@ function calculateScore(){
 
 // Define the messages used in the game.
 monogatari.action ('message').messages ({
-	'Help': {
-		title: 'Help',
-		subtitle: 'Some useful Links',
-		body: `
-			<p><a href='https://developers.monogatari.io/documentation/'>Documentation</a> - Everything you need to know.</p>
-			<p><a href='https://monogatari.io/demo/'>Demo</a> - A simple Demo.</p>
-		`
-	}
+
 });
 
 // Define the notifications used in the game
@@ -356,7 +349,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Keluarga saya tidak akan peduli jika hubungan ini berakhir',
+				'Text':'Jika hubungan ini berakhir, saya merasa kondisi keuangan akan baik-baik saja',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -379,7 +372,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Jika hubungan ini berakhir, saya merasa kondisi keuangan akan baik-baik saja',
+				'Text':'Saya tidak akan kesulitan mencukupi kebutuhan diri sendiri jika hubungan ini berakhir ',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -402,7 +395,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Saya tidak akan kesulitan mencukupi kebutuhan diri sendiri jika hubungan ini berakhir ',
+				'Text':'Tanpa pasangan, saya tidak akan mengalami masalah dalam memenuhi kebutuhan dasar untuk hidup',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -425,7 +418,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Tanpa pasangan, saya tidak akan mengalami masalah dalam memenuhi kebutuhan dasar untuk hidup',
+				'Text':'Mengakhiri hubungan ini akan membutuhkan banyak waktu dan usaha',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -448,7 +441,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Mengakhiri hubungan ini akan membutuhkan banyak waktu dan usaha',
+				'Text':'Akan cukup mudah bagi saya untuk mengakhiri hubungan ini',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -471,7 +464,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Akan cukup mudah bagi saya untuk mengakhiri hubungan ini',
+				'Text':'Mengakhiri hubungan ini akan membutuhkan banyak langkah yang sulit',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -489,29 +482,6 @@ monogatari.script ({
 				},
 				'Revert': () => {
 					monogatari.storage ({ answers: { q9: 0 }});
-				},
-			}
-		},
-		{
-			'Input': {
-				'Text':'Mengakhiri hubungan ini akan membutuhkan banyak langkah yang sulit',
-				'Type':'radio',
-				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
-				],
-				'Validation': (input) => {
-					return input.length > 0;
-				},
-				'Save': (input) => {
-					monogatari.storage ({ answers: { q10: input }});
-				},
-				'Revert': () => {
-					monogatari.storage ({ answers: { q10: 0 }});
 				},
 			}
 		},
@@ -537,6 +507,29 @@ monogatari.script ({
 					return input.length > 0;
 				},
 				'Save': (input) => {
+					monogatari.storage ({ answers: { q10: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q10: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Tidak peduli seberapa sulitnya masa depan yang harus dihadapi, saya ingin hubungan ini tetap kuat',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
 					monogatari.storage ({ answers: { q11: input }});
 				},
 				'Revert': () => {
@@ -546,7 +539,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Tidak peduli seberapa sulitnya masa depan yang harus dihadapi, saya ingin hubungan ini tetap kuat',
+				'Text':'Saya lebih sering memikirkan hubungan ini sebagai “kami” daripada “saya” dan “dia.”',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -569,7 +562,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Saya lebih sering memikirkan hubungan ini sebagai “kami” daripada “saya” dan “dia.”',
+				'Text':'Saya sering membayangkan bagaimana rasanya menikah atau berkencan dengan orang lain.',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -592,7 +585,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Saya sering membayangkan bagaimana rasanya menikah atau berkencan dengan orang lain.',
+				'Text':'Hubungan dengan pasangan saat ini jelas merupakan bagian dari rencana masa depan saya',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -615,7 +608,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Hubungan dengan pasangan saat ini jelas merupakan bagian dari rencana masa depan saya',
+				'Text':'Saya tidak ingin dikenal sebagai pasangan dari kekasih saya saat ini',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -638,7 +631,7 @@ monogatari.script ({
 		},
 		{
 			'Input': {
-				'Text':'Pekerjaan atau studi saya lebih penting daripada hubungan dengan pasangan.',
+				'Text':'Mungkin dalam beberapa tahun ke depan, saya sudah tidak ingin menjalin hubungan bersama pasangan saat ini',
 				'Type':'radio',
 				'Options':[
 					{label: '1', value: 1},
@@ -656,52 +649,6 @@ monogatari.script ({
 				},
 				'Revert': () => {
 					monogatari.storage ({ answers: { q16: 0 }});
-				},
-			}
-		},
-		{
-			'Input': {
-				'Text':'Saya tidak ingin dikenal sebagai pasangan dari kekasih saya saat ini',
-				'Type':'radio',
-				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
-				],
-				'Validation': (input) => {
-					return input.length > 0;
-				},
-				'Save': (input) => {
-					monogatari.storage ({ answers: { q17: input }});
-				},
-				'Revert': () => {
-					monogatari.storage ({ answers: { q17: 0 }});
-				},
-			}
-		},
-		{
-			'Input': {
-				'Text':'Mungkin dalam beberapa tahun ke depan, saya sudah tidak ingin menjalin hubungan bersama pasangan saat ini',
-				'Type':'radio',
-				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
-				],
-				'Validation': (input) => {
-					return input.length > 0;
-				},
-				'Save': (input) => {
-					monogatari.storage ({ answers: { q18: input }});
-				},
-				'Revert': () => {
-					monogatari.storage ({ answers: { q18: 0 }});
 				},
 			}
 		},
@@ -740,17 +687,17 @@ monogatari.script ({
 		'Setiap kesadaran sunyi yang muncul.',
 		'play voice system',
 		'Sesi mungkin telah berakhir, tetapi proses refleksimu baru saja dimulai.',
-		'show scene #000000 with fadeIn duration 2s',
 		'jump result',
 	],
 	'result':[
+		'show scene #000000 with fadeIn duration 2s',
 		'centered Terima kasih telah menyelesaikan tes ini!',
 		'centered Hasil tidak akan otomatis disimpan di perangkat Anda, pastikan untuk menyimpannya sebelum menutup halaman.',
 		{'Conditional':{
 			'Condition': function(){
 				const n = calculateScore();
-				const scorePercent = n/90;
-				const mean = n/18;
+				const scorePercent = n/80;
+				const mean = n/16;
 				monogatari.storage({score: {percent: (scorePercent * 100).toFixed(2)}});
 				if(mean < 1.685){
 					return 'sr';
