@@ -3,7 +3,7 @@
 function calculateScore(){
 	const scores = monogatari.storage('answers');
 	
-	const total = Object.values(scores).reduce((sum, val) => sum + Number(val), 0);
+	const total = Object.values(scores).reduce((sum, val) => sum + Number(val) - 1, 0);
 	return total;
 }
 
@@ -205,7 +205,7 @@ monogatari.script ({
 		'play voice doctor',
 		'd “Tidak ada jawaban benar atau salah. Cukup jawab sesuai yang paling benar bagi Anda.”',
 		'hide character d with fadeOut',
-		'hide image doctor.png with fadeOut',
+		'hide image doctor.png at right with fadeOut',
 		'show image rat.png at left with fadeIn',
 		'show character p sad at left with fadeIn',
 		'play voice system',
@@ -246,8 +246,25 @@ monogatari.script ({
 		'show character d happy at right',
 		'play voice doctor',
 		'd “Baik, mari kita mulai.”',
+		'play voice doctor',
+		'd “Pertama, boleh saya memanggil Anda dengan sebutan apa?”',
 		'play voice system',
 		'Kamu menarik napas dalam.',
+		{ 
+			'Input': {
+				'Text': 'Bagaimana kamu ingin dipanggil? (Jawaban Anda akan direkam).',
+				'Type': 'text',
+				'Validation': (input) => {
+					return input.trim ().length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ player: { name: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ player: { name: '' }});
+				},
+			}
+		},
 		'show character d normal at right',
 		'play voice doctor',
 		'd “Saya akan memberikan beberapa pernyataan.”',
@@ -732,10 +749,9 @@ monogatari.script ({
 		{'Conditional':{
 			'Condition': function(){
 				const n = calculateScore();
-				const mean = n/108;
-				monogatari.storage({score: {percent: (mean * 100).toFixed(2)}});
-				console.log(n);
-				console.log(mean);
+				const scorePercent = n/90;
+				const mean = n/18;
+				monogatari.storage({score: {percent: (scorePercent * 100).toFixed(2)}});
 				if(mean < 1.685){
 					return 'sr';
 				} else if(mean <= 2.459){
