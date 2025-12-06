@@ -1,5 +1,12 @@
 /* global monogatari */
 
+function calculateScore(){
+	const scores = monogatari.storage('answers');
+	
+	const total = Object.values(scores).reduce((sum, val) => sum + Number(val), 0);
+	return total;
+}
+
 // Define the messages used in the game.
 monogatari.action ('message').messages ({
 	'Help': {
@@ -151,7 +158,7 @@ monogatari.script ({
 		'Pacarmu tersenyum dengan rasa lega',
 		'play voice lady',
 		'“Terima kasih, aku rasa ini akan baik bagi kita”',
-		'jump Scene2',
+		'jump Scene1',
 	],
 	'No': [
 		'show character p angry at left',
@@ -202,7 +209,7 @@ monogatari.script ({
 		'show image rat.png at left with fadeIn',
 		'show character p sad at left with fadeIn',
 		'play voice system',
-		'Pasangan Anda menatap Anda dengan ragu.',
+		'Pasangan kamu menatap kamu dengan ragu.',
 		'play voice system',
 		'Dr. Cheeser dengan pengamatannya yang tajam memperhatikan ekspresi pacarmu, lalu menambahkan dengan nada yang tetap tenang, hampir tanpa emosi.',
 		'hide character p with fadeOut',
@@ -218,7 +225,7 @@ monogatari.script ({
 		'show image rat.png at left with fadeIn',
 		'show character p tired at left with fadeIn',
 		'play voice system',
-		'Pasangan Anda ragu sejenak',
+		'Pasanganmu ragu sejenak',
 		'play voice system',
 		'Lalu mengangguk.',
 		'show character p verysad at left',
@@ -255,17 +262,527 @@ monogatari.script ({
 		'd “Mari kita mulai dengan bagaimana Anda memandang hubungan Anda dan posisi hubungan itu dalam hidup Anda.”',
 		'play voice doctor',
 		'd “Kita bisa mulai dengan pertanyaan pertama.”',
-		{'Input':{
-			'Text':'Teman-teman tidak akan keberatan jika saya putus dengan pasangan saat ini',
-			'Type':'radio',
-			'Options':[
-				{label: '1', value: 1},
-				{label: '2', value: 2},
-				{label: '3', value: 3},
-				{label: '4', value: 4},
-				{label: '5', value: 5},
-				{label: '6', value: 6}
-			]
-		}},
-	]
+		{
+			'Input': {
+				'Text':'Teman-teman tidak akan keberatan jika saya putus dengan pasangan saat ini',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q1: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q1: 0 }});
+				},
+			}
+		},
+		'show character d squinting at right',
+		'play voice doctor',
+		'd “Ambil waktu seperlunya, tidak perlu terburu-buru.”',
+		'play voice doctor',
+		'd “Pikirkan makna pernyataan-pernyataan ini bagi Anda.”',
+		// There's gotta be a better way of doing this but I'm too busy to delve into the docs
+		{
+			'Input': {
+				'Text':'Teman-teman akan sulit menerima kenyataan jika saya harus mengakhiri hubungan dengan pasangan',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q2: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q2: 0 }});
+				},
+			}
+		},	
+		{
+			'Input': {
+				'Text':'Keluarga saya menginginkan hubungan ini berhasil',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q3: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q3: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Keluarga saya tidak akan peduli jika hubungan ini berakhir',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q4: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q4: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Jika hubungan ini berakhir, saya merasa kondisi keuangan akan baik-baik saja',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q5: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q5: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Saya tidak akan kesulitan mencukupi kebutuhan diri sendiri jika hubungan ini berakhir ',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q6: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q6: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Tanpa pasangan, saya tidak akan mengalami masalah dalam memenuhi kebutuhan dasar untuk hidup',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q7: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q7: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Mengakhiri hubungan ini akan membutuhkan banyak waktu dan usaha',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q8: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q8: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Akan cukup mudah bagi saya untuk mengakhiri hubungan ini',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q9: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q9: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Mengakhiri hubungan ini akan membutuhkan banyak langkah yang sulit',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q10: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q10: 0 }});
+				},
+			}
+		},
+		'show character d nonchalant at right',
+		'play voice doctor',
+		'd “Kita sudah setengah jalan.”',
+		'show character d happy at right',
+		'play voice doctor',
+		'd “Sejauh ini Anda sudah menjalankannya dengan baik, teruskan.”',
+		{
+			'Input': {
+				'Text':'Hubungan saya dengan pasangan lebih penting dari apapun',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q11: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q11: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Tidak peduli seberapa sulitnya masa depan yang harus dihadapi, saya ingin hubungan ini tetap kuat',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q12: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q12: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Saya lebih sering memikirkan hubungan ini sebagai “kami” daripada “saya” dan “dia.”',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q13: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q13: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Saya sering membayangkan bagaimana rasanya menikah atau berkencan dengan orang lain.',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q14: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q14: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Hubungan dengan pasangan saat ini jelas merupakan bagian dari rencana masa depan saya',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q15: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q15: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Pekerjaan atau studi saya lebih penting daripada hubungan dengan pasangan.',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q16: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q16: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Saya tidak ingin dikenal sebagai pasangan dari kekasih saya saat ini',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q17: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q17: 0 }});
+				},
+			}
+		},
+		{
+			'Input': {
+				'Text':'Mungkin dalam beberapa tahun ke depan, saya sudah tidak ingin menjalin hubungan bersama pasangan saat ini',
+				'Type':'radio',
+				'Options':[
+					{label: '1', value: 1},
+					{label: '2', value: 2},
+					{label: '3', value: 3},
+					{label: '4', value: 4},
+					{label: '5', value: 5},
+					{label: '6', value: 6}
+				],
+				'Validation': (input) => {
+					return input.length > 0;
+				},
+				'Save': (input) => {
+					monogatari.storage ({ answers: { q18: input }});
+				},
+				'Revert': () => {
+					monogatari.storage ({ answers: { q18: 0 }});
+				},
+			}
+		},
+		'jump Scene3',
+	],
+	'Scene3':[
+		'show character d nonchalant at right',
+		'play voice system',
+		'Dr. Cheeser meletakkan papan jalannya.',
+		'play voice doctor',
+		'd “Terima kasih atas kejujuranmu”',
+		'play voice doctor',
+		'd “Itu saja untuk hari ini,” katanya dengan tenang.',
+		'show character d normal at right',
+		'play voice doctor',
+		'd “Ini bukan tentang menilai cinta atau kesetiaan.”',
+		'play voice doctor',
+		'd “Ini tentang memahami apa yang membuat segalanya tetap bertahan, atau apa yang pada akhirnya bisa membuatnya terlepas.”',
+		'hide character d at right with fadeOut',
+		'hide image doctor.png at right with fadeOut',
+		'play sound door',
+		'play voice system',
+		'Kamu berjalan keluar dari ruangan',
+		'show image rat.png at left with fadeIn',
+		'show character p tired at left with fadeIn',
+		'play voice system',
+		'Matamu langsung tertuju pada pacarmu yang duduk di salah satu sofa ruang tunggu.',
+		'show character p normal at left',
+		'play voice system',
+		'Pacarmu menatapmu dari tempat duduknya sambil menggenggam tanganmu.',
+		'play voice lady',
+		'p “Jadi… bagaimana perasaanmu?”',
+		'play voice system',
+		'Kamu mengingat kembali setiap pertanyaan.',
+		'play voice system',
+		'Setiap kesadaran sunyi yang muncul.',
+		'play voice system',
+		'Sesi mungkin telah berakhir, tetapi proses refleksimu baru saja dimulai.',
+		'show scene #000000 with fadeIn duration 2s',
+		'jump result',
+	],
+	'result':[
+		'centered Terima kasih telah menyelesaikan tes ini!',
+		'centered Hasil tidak akan otomatis disimpan di perangkat Anda, pastikan untuk menyimpannya sebelum menutup halaman.',
+		{'Conditional':{
+			'Condition': function(){
+				const n = calculateScore();
+				const mean = n/108;
+				monogatari.storage({score: {percent: (mean * 100).toFixed(2)}});
+				console.log(n);
+				console.log(mean);
+				if(mean < 1.685){
+					return 'sr';
+				} else if(mean <= 2.459){
+					return 'r';
+				} else if(mean <= 4.009){
+					return 'c';
+				} else if(mean <= 4.784){
+					return 't';
+				} else if(mean >= 4.785){
+					return 'st';
+				}
+			},
+			'sr': 'jump sr',
+			'r': 'jump r',
+			'c': 'jump c',
+			't': 'jump t',
+			'st': 'jump st'
+		}}
+	],
+	'sr':[
+		'centered {{score.percent}}%',
+		'centered Sangat Rendah',
+		'centered Tingkat komitmenmu masih berada di tahap yang sangat rendah. Bisa jadi kamu belum benar-benar siap atau masih merasa ragu dengan hubungan ini. Tidak apa-apa—setiap orang punya waktunya masing-masing untuk memahami perasaannya.',
+		'end'
+	],
+	'r':[
+		'centered {{score.percent}}%',
+		'centered Rendah',
+		'centered Tingkat komitmenmu tergolong rendah. Itu berarti kamu punya ketertarikan, tapi masih ada banyak hal yang membuatmu belum sepenuhnya yakin. Mungkin kamu masih butuh waktu untuk mengenal dirimu sendiri dan hubungan ini lebih dalam.',
+		'end'
+	],
+	'c':[
+		'centered {{score.percent}}%',
+		'centered Cukup',
+		'centered Tingkat komitmenmu berada di posisi tengah. Kamu peduli, tapi masih menyimpan beberapa keraguan. Ini adalah titik yang wajar, di mana hubungan bisa tetap berjalan sambil terus tumbuh dan berkembang.',
+		'end'
+	],
+	't':[
+		'centered {{score.percent}}%',
+		'centered Tinggi',
+		'centered Tingkat komitmenmu tergolong tinggi. Kamu menunjukkan bahwa hubungan ini penting bagimu, dan kamu cukup siap untuk menjaganya. Ada keinginan tulus untuk tetap bertahan dan berkembang bersama.',
+		'end'
+	],
+	'st':[
+		'centered {{score.percent}}%',
+		'centered Sangat Tinggi',
+		'centered Tingkat komitmenmu sangat tinggi. Ini menunjukkan bahwa kamu benar-benar serius, penuh perhatian, dan siap melangkah jauh bersama pasanganmu. Hubungan ini memiliki arti yang sangat besar bagimu.',
+		'end'
+	],
 });

@@ -120,7 +120,7 @@ button:active {
 
 /* Style for Centered Text */
 [data-component="centered-dialog"] {
-
+	color: #FFF;
 }
 
 /* Style for Dialog */
