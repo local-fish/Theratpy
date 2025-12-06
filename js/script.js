@@ -7,6 +7,7 @@ function calculateScore(){
 	return total;
 }
 
+
 // Define the messages used in the game.
 monogatari.action ('message').messages ({
 
@@ -719,33 +720,23 @@ monogatari.script ({
 		}}
 	],
 	'sr':[
-		'centered {{score.percent}}%',
-		'centered Sangat Rendah',
-		'centered Tingkat komitmenmu masih berada di tahap yang sangat rendah. Bisa jadi kamu belum benar-benar siap atau masih merasa ragu dengan hubungan ini. Tidak apa-apa—setiap orang punya waktunya masing-masing untuk memahami perasaannya.',
+		'centered <div style="color: #e1a8aa; font-size: 48px">{{score.percent}}%</div><div style="font-size: 24px; margin-bottom: 8px">Sangat Rendah</div><div>Tingkat komitmenmu masih berada di tahap yang sangat rendah. Bisa jadi kamu belum benar-benar siap atau masih merasa ragu dengan hubungan ini. Tidak apa-apa—setiap orang punya waktunya masing-masing untuk memahami perasaannya.</div>',
 		'end'
 	],
 	'r':[
-		'centered {{score.percent}}%',
-		'centered Rendah',
-		'centered Tingkat komitmenmu tergolong rendah. Itu berarti kamu punya ketertarikan, tapi masih ada banyak hal yang membuatmu belum sepenuhnya yakin. Mungkin kamu masih butuh waktu untuk mengenal dirimu sendiri dan hubungan ini lebih dalam.',
+		'centered <div style="color: #e1a8aa; font-size: 48px">{{score.percent}}%</div><div style="font-size: 24px; margin-bottom: 8px">Rendah</div><div>Tingkat komitmenmu tergolong rendah. Itu berarti kamu punya ketertarikan, tapi masih ada banyak hal yang membuatmu belum sepenuhnya yakin. Mungkin kamu masih butuh waktu untuk mengenal dirimu sendiri dan hubungan ini lebih dalam.</div>',
 		'end'
 	],
 	'c':[
-		'centered {{score.percent}}%',
-		'centered Cukup',
-		'centered Tingkat komitmenmu berada di posisi tengah. Kamu peduli, tapi masih menyimpan beberapa keraguan. Ini adalah titik yang wajar, di mana hubungan bisa tetap berjalan sambil terus tumbuh dan berkembang.',
+		'centered <div style="color: #e1a8aa; font-size: 48px">{{score.percent}}%</div><div style="font-size: 24px; margin-bottom: 8px">Cukup</div><div>Tingkat komitmenmu berada di posisi tengah. Kamu peduli, tapi masih menyimpan beberapa keraguan. Ini adalah titik yang wajar, di mana hubungan bisa tetap berjalan sambil terus tumbuh dan berkembang.</div>',
 		'end'
 	],
 	't':[
-		'centered {{score.percent}}%',
-		'centered Tinggi',
-		'centered Tingkat komitmenmu tergolong tinggi. Kamu menunjukkan bahwa hubungan ini penting bagimu, dan kamu cukup siap untuk menjaganya. Ada keinginan tulus untuk tetap bertahan dan berkembang bersama.',
+		'centered <div style="color: #e1a8aa; font-size: 48px">{{score.percent}}%</div><div style="font-size: 24px; margin-bottom: 8px">Tinggi</div><div>Tingkat komitmenmu tergolong tinggi. Kamu menunjukkan bahwa hubungan ini penting bagimu, dan kamu cukup siap untuk menjaganya. Ada keinginan tulus untuk tetap bertahan dan berkembang bersama.</div>',
 		'end'
 	],
 	'st':[
-		'centered {{score.percent}}%',
-		'centered Sangat Tinggi',
-		'centered Tingkat komitmenmu sangat tinggi. Ini menunjukkan bahwa kamu benar-benar serius, penuh perhatian, dan siap melangkah jauh bersama pasanganmu. Hubungan ini memiliki arti yang sangat besar bagimu.',
+		'centered <div style="color: #e1a8aa; font-size: 48px">{{score.percent}}%</div><div style="font-size: 24px; margin-bottom: 8px">Sangat Tinggi</div><div>Tingkat komitmenmu sangat tinggi. Ini menunjukkan bahwa kamu benar-benar serius, penuh perhatian, dan siap melangkah jauh bersama pasanganmu. Hubungan ini memiliki arti yang sangat besar bagimu.</div>',
 		'end'
 	],
 });
