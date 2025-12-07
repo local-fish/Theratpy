@@ -17,6 +17,9 @@
  * ===========================
 **/
 
+.input-pair {
+	padding: 0px;
+}
 /* General Style */
 body {
   font-family: "Finger Paint", sans-serif;
@@ -226,7 +229,9 @@ input[type=range]::-ms-fill-upper {
 
 /** Medium Devices, Tablets (992px)**/
 @media screen and (min-width: 62em) {
-
+	input[type="radio"] {
+		margin: 0;
+	}
 }
 
 /** HD Screen, Large Devices, Wide Screens, Desktop (1200px) **/

@@ -278,12 +278,12 @@ monogatari.script ({
 				'Text':'Teman-teman tidak akan keberatan jika saya putus dengan pasangan saat ini',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -307,12 +307,12 @@ monogatari.script ({
 				'Text':'Teman-teman akan sulit menerima kenyataan jika saya harus mengakhiri hubungan dengan pasangan',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -330,12 +330,12 @@ monogatari.script ({
 				'Text':'Keluarga saya menginginkan hubungan ini berhasil',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -353,12 +353,12 @@ monogatari.script ({
 				'Text':'Jika hubungan ini berakhir, saya merasa kondisi keuangan akan baik-baik saja',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -376,12 +376,12 @@ monogatari.script ({
 				'Text':'Saya tidak akan kesulitan mencukupi kebutuhan diri sendiri jika hubungan ini berakhir ',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -399,12 +399,12 @@ monogatari.script ({
 				'Text':'Tanpa pasangan, saya tidak akan mengalami masalah dalam memenuhi kebutuhan dasar untuk hidup',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -422,12 +422,12 @@ monogatari.script ({
 				'Text':'Mengakhiri hubungan ini akan membutuhkan banyak waktu dan usaha',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -445,12 +445,12 @@ monogatari.script ({
 				'Text':'Akan cukup mudah bagi saya untuk mengakhiri hubungan ini',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -468,12 +468,12 @@ monogatari.script ({
 				'Text':'Mengakhiri hubungan ini akan membutuhkan banyak langkah yang sulit',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -497,12 +497,12 @@ monogatari.script ({
 				'Text':'Hubungan saya dengan pasangan lebih penting dari apapun',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -520,12 +520,12 @@ monogatari.script ({
 				'Text':'Tidak peduli seberapa sulitnya masa depan yang harus dihadapi, saya ingin hubungan ini tetap kuat',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -543,12 +543,12 @@ monogatari.script ({
 				'Text':'Saya lebih sering memikirkan hubungan ini sebagai “kami” daripada “saya” dan “dia.”',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -566,12 +566,12 @@ monogatari.script ({
 				'Text':'Saya sering membayangkan bagaimana rasanya menikah atau berkencan dengan orang lain.',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -589,12 +589,12 @@ monogatari.script ({
 				'Text':'Hubungan dengan pasangan saat ini jelas merupakan bagian dari rencana masa depan saya',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -612,12 +612,12 @@ monogatari.script ({
 				'Text':'Saya tidak ingin dikenal sebagai pasangan dari kekasih saya saat ini',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
@@ -635,12 +635,12 @@ monogatari.script ({
 				'Text':'Mungkin dalam beberapa tahun ke depan, saya sudah tidak ingin menjalin hubungan bersama pasangan saat ini',
 				'Type':'radio',
 				'Options':[
-					{label: '1', value: 1},
-					{label: '2', value: 2},
-					{label: '3', value: 3},
-					{label: '4', value: 4},
-					{label: '5', value: 5},
-					{label: '6', value: 6}
+					{label: '1 - Sangat Tidak Setuju', value: 1},
+					{label: '2 - Tidak Setuju', value: 2},
+					{label: '3 - Agak Tidak Setuju', value: 3},
+					{label: '4 - Agak Setuju', value: 4},
+					{label: '5 - Setuju', value: 5},
+					{label: '6 - Sangat Setuju', value: 6}
 				],
 				'Validation': (input) => {
 					return input.length > 0;
