@@ -7,6 +7,42 @@ function calculateScore(){
 	return total;
 }
 
+async function publishResponse(){
+	console.log(monogatari.storage('player').name);
+	try {
+		const res = await fetch('https://wallapy-api.vercel.app/api/submit/main', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				Name: monogatari.storage('player').name,
+				Q1: Number(monogatari.storage('answers').q1),
+				Q2: Number(monogatari.storage('answers').q2),
+				Q3: Number(monogatari.storage('answers').q3),
+				Q4: Number(monogatari.storage('answers').q4),
+				Q5: Number(monogatari.storage('answers').q5),
+				Q6: Number(monogatari.storage('answers').q6),
+				Q7: Number(monogatari.storage('answers').q7),
+				Q8: Number(monogatari.storage('answers').q8),
+				Q9: Number(monogatari.storage('answers').q9),
+				Q10: Number(monogatari.storage('answers').q10),
+				Q11: Number(monogatari.storage('answers').q11),
+				Q12: Number(monogatari.storage('answers').q12),
+				Q13: Number(monogatari.storage('answers').q13),
+				Q14: Number(monogatari.storage('answers').q14),
+				Q15: Number(monogatari.storage('answers').q15),
+				Q16: Number(monogatari.storage('answers').q16),
+				Score: monogatari.storage('score').mean
+				
+			})
+		})
+		console.log('Server response:', res)
+	} catch (err) {
+		console.error('Error:', err)
+  }
+}
+
 
 // Define the messages used in the game.
 monogatari.action ('message').messages ({
@@ -102,7 +138,7 @@ monogatari.characters ({
 
 monogatari.script ({
 	// The game starts here.
-	'Start': [
+	'Start': [		
 		'show scene #000000 with fadeIn',
 		'play music main with loop fade 3',
 		'play voice system',
@@ -699,7 +735,9 @@ monogatari.script ({
 				const n = calculateScore();
 				const scorePercent = n/80;
 				const mean = n/16;
+				monogatari.storage({score: {mean: mean}});
 				monogatari.storage({score: {percent: (scorePercent * 100).toFixed(2)}});
+				publishResponse();
 				if(mean < 1.685){
 					return 'sr';
 				} else if(mean <= 2.459){
