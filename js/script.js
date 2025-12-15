@@ -112,7 +112,7 @@ monogatari.assets ('scenes', {
 // Define the Characters
 monogatari.characters ({
 	'd': {
-		name: 'Dr. Cheeser',
+		name: 'Dr. Hopson',
 		color: '#886154',
 		sprites: {
 			normal: 'Normal_Doctor.png',
@@ -220,7 +220,7 @@ monogatari.script ({
 		'play voice doctor',
 		'd “Ah, kalian pasti pasangan itu. Selamat datang. Silakan duduk.”',
 		'play voice doctor',
-		'd “Saya Dr. Cheeser, Julius Cheeser. Tapi kalian bisa memanggil saya Dr. Cheeser.”',
+		'd “Saya Dr. Hopson, Rufus Hopson. Tapi kalian bisa memanggil saya Dr. Hopson.”',
 		'play voice system',
 		'Nada bicaranya stabil tidak hangat namun juga tidak dingin, hanya seimbang',
 		'play voice system',
@@ -242,7 +242,7 @@ monogatari.script ({
 		'play voice system',
 		'Pasangan kamu menatap kamu dengan ragu.',
 		'play voice system',
-		'Dr. Cheeser dengan pengamatannya yang tajam memperhatikan ekspresi pacarmu, lalu menambahkan dengan nada yang tetap tenang, hampir tanpa emosi.',
+		'Dr. Hopson dengan pengamatannya yang tajam memperhatikan ekspresi pacarmu, lalu menambahkan dengan nada yang tetap tenang, hampir tanpa emosi.',
 		'hide character p with fadeOut',
 		'hide image rat.png with fadeOut',
 		'show image doctor.png at right with fadeIn',
@@ -273,7 +273,7 @@ monogatari.script ({
 		'play voice system',
 		'show image doctor.png at right with fadeIn',
 		'show character d squinting at right with fadeIn',
-		'Dr. Cheeser menjepit lembar kertas baru pada papan jalannya dan mengklik pulpen.',
+		'Dr. Hopson menjepit lembar kertas baru pada papan jalannya dan mengklik pulpen.',
 		'show character d happy at right',
 		'play voice doctor',
 		'd “Baik, mari kita mulai.”',
@@ -305,7 +305,7 @@ monogatari.script ({
 	],
 	'Scene2':[
 		'play voice system',
-		'Dr. Cheeser berbicara dengan tenang.',
+		'Dr. Hopson berbicara dengan tenang.',
 		'play voice doctor',
 		'd “Mari kita mulai dengan bagaimana Anda memandang hubungan Anda dan posisi hubungan itu dalam hidup Anda.”',
 		'play voice doctor',
@@ -718,7 +718,7 @@ monogatari.script ({
 	'Scene3':[
 		'show character d nonchalant at right',
 		'play voice system',
-		'Dr. Cheeser meletakkan papan jalannya.',
+		'Dr. Hopson meletakkan papan jalannya.',
 		'play voice doctor',
 		'd “Terima kasih atas kejujuranmu”',
 		'play voice doctor',
